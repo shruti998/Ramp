@@ -83,7 +83,9 @@ else{
           {transactions !== null && (
             <button
               className="RampButton"
-              disabled={paginatedTransactionsUtils.loading}
+             // disabled={paginatedTransactionsUtils.loading}
+             //Bug 6
+             disabled={paginatedTransactionsUtils.loading || transactionsByEmployee?.length === 0|| paginatedTransactions?.nextPage == null}
               onClick={async () => {
                 await loadAllTransactions()
               }}
